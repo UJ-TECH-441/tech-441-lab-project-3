@@ -1,0 +1,93 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+* {
+	font: 400 16px Rubik, sans-serif;
+}
+
+body {
+	background-color: aliceblue;
+	padding: 50px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1, h2, h3 {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 1.5rem;
+}
+
+h2 {
+	font-size: 1.2rem;
+}
+
+h3 {
+	font-size: 1rem;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+#content {
+	background-color: white;
+	max-width: 900px;
+	margin: auto;
+	padding: 50px;
+	border: solid 1px gray;
+	filter: drop-shadow(15px 15px #ccc);
+}
+
+#main > div {
+	margin-bottom: 20px;
+}
+
+#main > img {
+	float: right;
+	height: 100px;
+}
+
+#rating {
+	border-top: solid 1px #ccc;
+	padding-top: 10px;
+	cursor: pointer;
+}
+
+#rating > div {
+	margin: 1rem 0;
+}
+
+#rating-message {
+	display: none;
+}
+
+.star {
+	width: 30px;
+}
+
+#error {
+	display: none;
+	font-color: #cc0000;
+	font-weight: 700;
+}
+
+#results-numbers {
+	font-weight: 700;
+	visibility: hidden;
+}
+
+#results-numbers-guess {
+	font-weight: 700;
+	color: #00bb00;
+	font-size: 1.2rem;
+}
