@@ -19,21 +19,19 @@ const guess = () => {
 	const min = $('#min').val();
 	const max = $('#max').val();
 
-	/* POST method */
-//	fetch(`/numbers/guess`, {
-//		method: 'POST',
-//		body: JSON.stringify({ min, max }),
-//		headers: { 'Content-Type': 'application/json' }
-//	})
-	/* GET method */
+	// Send request using GET method with params in query string
 	fetch(`/numbers/guess?min=${min}&max=${max}`, { method: 'GET' })
-		.then(resp => resp.json())
+		.then(res => {
+			if (!res.ok) throw new Error(res.statusText);
+			return res.json();
+		})
 		.then(result => {
-			// Create some artificial suspense; add one dot each second until 3 seconds have passed
+			// Create some artificial suspense; add one dot each second
+			// until 3 seconds have passed
 			let wait = 0;
 			let interval = setInterval(() => {
 				if (wait < 3) {
-					$('#results-numbers-guess').text($('#results-numbers-guess').text() + '.');
+					$('#results-numbers-guess').text($('#results-numbers-guess').text() + '. ');
 				} else {
 					voted = false;
 					$('#results-numbers-guess').text(result.guess);
@@ -59,7 +57,10 @@ const vote = (element, correct) => {
 		body: JSON.stringify({ correct }),
 		headers: { 'Content-Type': 'application/json' }
 	})
-	.then(resp => resp.json())
+	.then(res => {
+		if (!res.ok) throw new Error(res.statusText);
+		return res.json();
+	})
 	.then(result => {
 		voted = true;
 		$('#score').html(`The Mindreader's current accuracy rate is 

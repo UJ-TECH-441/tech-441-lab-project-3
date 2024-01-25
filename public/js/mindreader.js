@@ -5,8 +5,11 @@ $(document).ready(function() {
 });
 
 const read = () => {
-	fetch(`/readmymind`)
-		.then(resp => resp.json())
+	fetch(`/predictions`)
+		.then(res => {
+			if (!res.ok) throw new Error(res.statusText);
+			return res.json();
+		})
 		.then(result => {
 			// Result will be a JSON object
 			const items = result.messages.map(message =>
@@ -19,5 +22,4 @@ const read = () => {
 			$('#error').html('Error');
 			$('#error').show();
 		});
-
 };
