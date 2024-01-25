@@ -2,4 +2,4 @@
 
 # TECH 441 Lab Project: Lab 3
 
-This project is only intended for instructors.
+Please see lab instructions for details.
