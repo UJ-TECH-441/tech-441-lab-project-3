@@ -39,6 +39,10 @@ h3 {
 	font-weight: 700;
 }
 
+.hide {
+	display: none;
+}
+
 #content {
 	background-color: white;
 	max-width: 900px;
@@ -75,19 +79,28 @@ h3 {
 	width: 30px;
 }
 
+.color-green {
+	color: #00bb00;
+}
+
+.color-red {
+	color: #cc0000;
+}
+
+.hand {
+	cursor: pointer;
+}
+
 #error {
 	display: none;
-	font-color: #cc0000;
 	font-weight: 700;
 }
 
 #results-numbers {
 	font-weight: 700;
-	visibility: hidden;
 }
 
 #results-numbers-guess {
 	font-weight: 700;
-	color: #00bb00;
 	font-size: 1.2rem;
 }

@@ -3,13 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mindreader</title>
-	<script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script src="js/numbers.js"></script>
-	<script src="js/rating.js"></script>
 	<link rel="preconnect" href="//fonts.googleapis.com">
 	<link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
 	<link rel="preload" as="style" href="//fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap">
 	<link rel="stylesheet" href="css/main.css">
+	<script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="js/numbers.js"></script>
+	<script src="js/rating.js"></script>
+	<script src="//kit.fontawesome.com/7ace92dc39.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <div id="content">
@@ -22,13 +24,25 @@
 		<img src="img/mindreader.png"/>
 		<div>I believe that I can read your mind.</div>
 		<div>Pick a number between <select id="min"></select> and <select id="max"></select></div>
-		<div id="results-numbers">
+		<div id="results-numbers" class="hide">
 			Hmm... The number that you are thinking of is: &nbsp;
-			<span id="results-numbers-guess"></span>
+			<span id="results-numbers-guess" class="color-green"></span>
+		</div>
+		<div id="results-numbers-correct" class="hide">
+			Was I correct?
+			<i id="number-correct-true" class="fa-regular fa-circle-check hand vote color-green"
+				onmouseover="!voted && $(this).addClass('fa-solid')" onmouseout="!voted && $(this).removeClass('fa-solid')"
+				onclick="vote(this, true)"
+			></i>
+			<i id="number-correct-false" class="fa-regular fa-circle-xmark hand vote color-red"
+				onmouseover="!voted && $(this).addClass('fa-solid')" onmouseout="!voted && $(this).removeClass('fa-solid')"
+				onclick="vote(this, false)"
+			></i>
 		</div>
 		<div id="buttons">
 			<button id="submit">Try it</button>
 		</div>
+		<div id="score"></div>
 		<div id="rating">
 			<div>Rate the mindreader!</div>
 			<div>
@@ -45,7 +59,7 @@
 			</div>
 		</div>
 	</article>
-	<div id="error"></div>
+	<div id="error" class="color-red"></div>
 </div>
 </body>
 </html>
