@@ -2,7 +2,6 @@ const express = require('express');
 const handler = require('../handlers/handler-mindreader');
 
 module.exports = app => {
-
 	app.get('/predictions', async (req, res, next) => {
 		try {
 			const messages = handler.makePredictions();
@@ -13,5 +12,4 @@ module.exports = app => {
 			res.sendStatus(500);
 		}
 	});
-
 };

@@ -5,6 +5,7 @@ $(document).ready(function() {
 });
 
 const read = () => {
+	scoreReset();
 	fetch(`/predictions`)
 		.then(res => {
 			if (!res.ok) throw new Error(res.statusText);
@@ -17,6 +18,7 @@ const read = () => {
 			);
 			$('#results').html(`<ul>${items.join('\n')}</ul>`);
 			$('#try-again').show();
+			scoreShow();
 		})
 		.catch(err => {
 			console.error(err);

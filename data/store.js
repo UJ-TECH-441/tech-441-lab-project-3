@@ -1,7 +1,13 @@
 module.exports = {
-	numbers: {
-		votes: 0,
-		correct: 0
+	score: {
+		predictions: {
+			votes: 0,
+			correct: 0
+		},
+		numbers: {
+			votes: 0,
+			correct: 0
+		}
 	},
 	rating: {
 		votes: 0,

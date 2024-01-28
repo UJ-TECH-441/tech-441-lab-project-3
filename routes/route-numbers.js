@@ -2,7 +2,6 @@ const express = require('express');
 const handler = require('../handlers/handler-numbers');
 
 module.exports = app => {
-
 	// This is GET route but could conceivably be a POST.
 	// It has aspects of both, as the client sends data to
 	// the server but also depends on the data in the response
@@ -28,20 +27,4 @@ module.exports = app => {
 			res.sendStatus(500);
 		}
 	});
-
-	// POST request for user to send correct/incorrect feedback
-	app.post('/numbers/vote', async (req, res, next) => {
-		try {
-			// As this is a POST, the data is in the body
-			// read the "correct" value and pass to handler
-			const result = handler.vote(req.body.correct);
-			// Return the JSON result
-			res.json(result);
-		} catch (err) {
-			// Error handling
-			console.error(err);
-			res.sendStatus(500);
-		}
-	});
-
 };
