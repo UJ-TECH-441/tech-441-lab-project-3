@@ -3,7 +3,7 @@ const handler = require('../handlers/handler-score');
 
 module.exports = app => {
 	// POST request for user to send correct/incorrect feedback
-	app.post('/score', async (req, res, next) => {
+	app.post('/score', (req, res, next) => {
 		try {
 			// Ensure that the category is valid
 			if (!handler.categories[req.body.category]) return res.sendStatus(400);

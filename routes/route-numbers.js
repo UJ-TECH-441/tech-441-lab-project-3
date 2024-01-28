@@ -5,7 +5,7 @@ module.exports = app => {
 	// This is GET route but could conceivably be a POST.
 	// It has aspects of both, as the client sends data to
 	// the server but also depends on the data in the response
-	app.get('/numbers/guess', async (req, res, next) => {
+	app.get('/numbers/guess', (req, res, next) => {
 		try {
 			// Validate input from query string; if this were
 			// a POST request, min and max would be in the request
