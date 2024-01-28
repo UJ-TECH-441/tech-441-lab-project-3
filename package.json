@@ -1,20 +1,11 @@
 {
-	"name": "tech-441-project-template",
+	"name": "tech-441-lab-project-3",
 	"version": "1.0.0",
-	"description": "Template repository for TECH-441 project",
+	"description": "TECH-441 Lab 3 project",
 	"scripts": {
 		"start": "nodemon app"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/UJ-TECH-441/tech-441-project-template.git"
-	},
-	"author": "",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/UJ-TECH-441/tech-441-project-template/issues"
-	},
-	"homepage": "https://github.com/UJ-TECH-441/tech-441-project-template#readme",
 	"dependencies": {
 		"@faker-js/faker": "^8.3.1",
 		"body-parser": "^1.20.2",
